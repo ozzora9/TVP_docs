@@ -1,0 +1,59 @@
+.extensibility-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.visual-placeholder {
+  flex: 1;
+  height: 300px;
+  background: linear-gradient(
+    135deg,
+    var(--bg-card),
+    var(--bg-section)
+  );
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.placeholder-icon {
+  color: var(--color-primary);
+  opacity: 0.3;
+}
+
+.extensibility-content {
+  flex: 1;
+}
+
+.extensibility-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.extensibility-content p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* Community.css에 정의된 .btn-secondary를 재사용하거나, 여기서 따로 정의할 수 있습니다. */
+/* 예:
+.btn-secondary {
+  background-color: #374151;
+  color: white; ...
+}
+*/
+
+@media (max-width: 992px) {
+  .extensibility-section {
+    flex-direction: column-reverse; /* 화면이 작아지면 텍스트가 위로 오도록 */
+    gap: 3rem;
+  }
+}

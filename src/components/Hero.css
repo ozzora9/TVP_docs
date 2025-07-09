@@ -1,0 +1,128 @@
+.hero-section {
+  text-align: center;
+  padding: 8rem 1.5rem 6rem 1.5rem; /* 위쪽 여백을 더 많이 줍니다 */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.main-title {
+  font-size: 4rem; /* 매우 큰 메인 타이틀 */
+  font-weight: 700;
+  line-height: 1.1;
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #a0a0a0
+  ); /* 그라데이션 텍스트 효과 */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 1.5rem auto 2.5rem auto; /* 위아래, 좌우 자동 여백 */
+  line-height: 1.6;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* 버튼 사이의 간격 */
+  margin-bottom: 4rem;
+}
+
+/* 
+  버튼 스타일은 다른 컴포넌트와 공유될 수 있으므로, 
+  전역 CSS(App.css)에 정의하고 여기서는 재정의하거나 그대로 사용해도 좋습니다.
+  여기서는 Hero 섹션에 맞는 버튼 스타일을 다시 한번 정의합니다.
+*/
+.btn-primary {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px); /* 살짝 떠오르는 효과 */
+}
+
+.btn-secondary {
+  background-color: #374151;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: #4b5563;
+  transform: translateY(-2px);
+}
+
+.editor-showcase {
+  /* 실제 사이트는 정교한 3D 효과와 그림자가 있습니다. */
+  /* 여기서는 간단한 플레이스홀더 스타일을 적용합니다. */
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card); /* 에디터 배경색과 비슷하게 */
+  padding: 1rem;
+  box-shadow: 0 25px 50px -12px color-mix(in srgb, var(--text-primary)
+        20%, transparent); /* 수정 */
+  overflow: hidden;
+}
+
+.editor-showcase img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px; /* 이미지 자체에도 약간의 둥근 모서리 */
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 6rem 1.5rem 4rem 1.5rem;
+  }
+
+  .main-title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  .button-group {
+    flex-direction: column; /* 작은 화면에서는 버튼을 세로로 배열 */
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+  }
+}

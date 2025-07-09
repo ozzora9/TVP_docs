@@ -1,0 +1,102 @@
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: color-mix(
+    in srgb,
+    var(--bg-main) 80%,
+    transparent
+  );
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.nav-desktop a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  margin: 0 1rem;
+  transition: color 0.2s;
+}
+
+.nav-desktop a:hover {
+  color: var(--text-primary);
+}
+
+.hamburger-menu {
+  display: none; /* 평소에는 숨김 */
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb;
+}
+
+/* 반응형: 화면이 768px보다 작아지면 */
+@media (max-width: 768px) {
+  .nav-desktop {
+    display: none; /* 데스크탑 메뉴 숨김 */
+  }
+  .hamburger-menu {
+    display: block; /* 햄버거 메뉴 보임 */
+  }
+}
+
+/* 기존 .header-actions 스타일에 gap을 추가하면 좋습니다 */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* 버튼들 사이의 간격 */
+}
+
+/* 테마 토글 버튼 스타일 */
+.theme-toggle-btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* 원형 버튼 */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.theme-toggle-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--text-primary);
+}

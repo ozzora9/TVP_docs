@@ -1,0 +1,89 @@
+/* ------------------------------------------- */
+/* 1. CSS 변수 (전역 스타일 정의)               */
+/* ------------------------------------------- */
+/* 기본 테마 (라이트 모드) */
+:root {
+  --color-primary: #0d6efd;
+  --color-primary-hover: #0b5ed7;
+  --color-secondary: #6c757d;
+  --color-secondary-hover: #5c636a;
+  --bg-main: #ffffff;
+  --bg-section: #f8f9fa;
+  --bg-card: #ffffff;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --border-color: #dee2e6;
+  --max-width: 1200px;
+}
+
+/* <html> 태그에 data-theme="dark" 속성이 있을 때 적용될 다크 모드 색상 */
+[data-theme="dark"] {
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+  --color-secondary: #374151;
+  --color-secondary-hover: #4b5563;
+  --bg-main: #1a1b1e;
+  --bg-section: #16171a;
+  --bg-card: #25262a;
+  --text-primary: #f0f0f0;
+  --text-secondary: #a0a0a0;
+  --border-color: #333;
+}
+
+/* ------------------------------------------- */
+/* 2. 기본 스타일 리셋 및 전역 폰트 설정         */
+/* ------------------------------------------- */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  /* ✨ 수정된 부분: 테마에 따라 바뀌는 공식 변수명 사용 */
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
+
+/* ✨ 수정된 부분: SCSS 문법을 일반 CSS로 변경 */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* ------------------------------------------- */
+/* 3. 전체 레이아웃 (가장 중요한 부분)        */
+/* ------------------------------------------- */
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Header와 Footer의 배경이 화면 전체를 차지하도록 함 */
+.full-width {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Header와 Footer '내부의 콘텐츠'를 중앙 정렬하는 컨테이너 */
+.header-container,
+.footer-container {
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Header, Footer를 제외한 메인 콘텐츠 영역 */
+main {
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
